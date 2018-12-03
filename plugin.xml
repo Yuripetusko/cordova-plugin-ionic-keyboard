@@ -27,4 +27,18 @@
         <source-file src="src/android/IonicKeyboard.java" target-dir="src/io/ionic/keyboard"/>
     </platform>
 
+    <!-- ios -->	
+    <platform name="ios">	
+         <js-module src="www/ios/keyboard.js" name="keyboard">	
+    	    <clobbers target="window.Keyboard"/>	
+        </js-module>	
+         <config-file target="config.xml" parent="/*">	
+            <feature name="Keyboard">	
+                <param name="ios-package" value="CDVIonicKeyboard" onload="true"/>	
+            </feature>	
+        </config-file>	
+         <header-file src="src/ios/CDVIonicKeyboard.h"/>	
+        <source-file src="src/ios/CDVIonicKeyboard.m"/>	
+    </platform>
+
 </plugin>
